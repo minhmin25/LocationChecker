@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "348727736349",
+    "firebase_url": "https://locationchecker-a9191.firebaseio.com",
+    "project_id": "locationchecker-a9191",
+    "storage_bucket": "locationchecker-a9191.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:348727736349:android:028f7479711302a2",
+        "android_client_info": {
+          "package_name": "com.dev.minhmin.locationchecker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "348727736349-7ucd07nl3tarl6p5nsoo1rgcldi36kj3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dev.minhmin.locationchecker",
+            "certificate_hash": "a550b69d257d8896c95a83072f1b6744587ba90b"
+          }
+        },
+        {
+          "client_id": "348727736349-k3s0oluo45oq84oj717tdka1b4faedks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3hLJvlQbdEalA3-xU4oSbmQmZOy-YA3U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "348727736349-k3s0oluo45oq84oj717tdka1b4faedks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
