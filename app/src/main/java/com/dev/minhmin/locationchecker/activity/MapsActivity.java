@@ -56,7 +56,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private String key = "";
     private ImageView _btnBack;
     private Checker mChecker, focusChecker;
-    //    private GoogleApiClient mGoogleApiClient;
+    private GoogleApiClient mGoogleApiClient;
     private LatLng origin, dest;
 
     @Override
@@ -82,14 +82,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     protected void onStart() {
         super.onStart();
-//        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-//            @Override
-//            public boolean onMarkerClick(Marker marker) {
-//                mMap.moveCamera(CameraUpdateFactory.newLatLng(marker.getPosition()));
-//                mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
-//                return false;
-//            }
-//        });
     }
 
     /**
@@ -132,7 +124,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         focusChecker = c;
                     }
                 }
-                if (focusChecker == null) focusChecker = mChecker;
+                if (focusChecker == null) {
+                    focusChecker = mChecker;
+                }
                 origin = new LatLng(mChecker.getX(), mChecker.getY());
                 dest = new LatLng(focusChecker.getX(), focusChecker.getY());
                 mMap.moveCamera(CameraUpdateFactory.newLatLng(dest));

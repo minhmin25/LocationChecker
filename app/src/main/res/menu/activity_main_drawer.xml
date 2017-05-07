@@ -8,6 +8,9 @@
             android:id="@+id/nav_logout"
             android:title="Log out" />
         <item
+            android:id="@+id/nav_get_id"
+            android:title="Get ID" />
+        <item
             android:id="@+id/nav_information"
             android:title="Information" />
     </group>

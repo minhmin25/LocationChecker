@@ -2,6 +2,8 @@ package com.dev.minhmin.locationchecker.activity;
 
 import android.app.ActivityManager;
 import android.app.AlertDialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -86,7 +88,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         adapter = new ListCheckerAdapter(this, listCheckers);
         lvChecker.setAdapter(adapter);
         lvChecker.setOnItemClickListener(this);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -97,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         }
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        final NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         View v = navigationView.getHeaderView(0);
         tvAccName = (TextView) v.findViewById(R.id.tv_account_name);
@@ -117,15 +118,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 if (!dataSnapshot.exists()) {
                     DatabaseReference mRef = ref.child(userID).child(userID);
                     Map<String, Object> newLocation = new HashMap<>();
+//                    newLocation.put("id", userID);
                     newLocation.put("x", 0);
                     newLocation.put("y", 0);
                     newLocation.put("name", "Your Divice");
+                    newLocation.put("imageUrl", user.getPhotoUrl().toString());
                     mRef.setValue(newLocation);
                 } else {
                     listCheckers.clear();
                     for (DataSnapshot i : dataSnapshot.getChildren()) {
                         Checker c = i.getValue(Checker.class);
-                        c.setId(i.getKey());
+//                        c.setId(i.getKey());
                         listCheckers.add(c);
                     }
                     adapter.notifyDataSetChanged();
@@ -138,9 +141,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             }
         });
 
-        Log.e("ahihi", user.getUid());
         if (!isMyServiceRunning(LocationUpdatesService.class)) {
-            Log.e("ahihi", "service not running, start service");
             Intent intent = new Intent(MainActivity.this, LocationUpdatesService.class);
             startService(intent);
         }
@@ -250,6 +251,27 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                             "Tran Anh Minh\n" +
                             "Bui Thi Thuy Duong\n" +
                             "Bui Thanh Loc")
+                    .setNegativeButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        } else if (id == R.id.nav_get_id) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("User ID")
+                    .setMessage(userID)
+                    .setPositiveButton("Copy", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            ClipboardManager clipboardManager = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+                            ClipData data = ClipData.newPlainText("ID", userID);
+                            clipboardManager.setPrimaryClip(data);
+                            dialogInterface.cancel();
+                        }
+                    })
                     .setNegativeButton("OK", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {

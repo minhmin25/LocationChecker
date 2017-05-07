@@ -5,10 +5,18 @@ package com.dev.minhmin.locationchecker.model;
  */
 
 public class Checker {
-//    private String id;
-    private String name;
-    private float x, y;
     private String id;
+    private String name;
+    private String imageUrl;
+    private float x, y;
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
 
     public String getId() {
         return id;

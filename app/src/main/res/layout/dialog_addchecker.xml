@@ -5,30 +5,27 @@
     android:orientation="vertical">
 
     <EditText
-        android:paddingLeft="10dp"
-        android:background="@drawable/search"
         android:id="@+id/edt_checker_id"
         android:layout_width="300dp"
         android:layout_height="48dp"
-        android:gravity="center"
-        android:drawableLeft="@drawable/id_3"
-
-        android:textColorHint="@color/com_facebook_button_background_color_selected"
-        android:hint="Enter id checker"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/search"
+        android:gravity="center"
+        android:hint="Enter id checker"
+        android:paddingLeft="10dp"
+        android:textColorHint="@color/com_facebook_button_background_color_selected" />
 
     <EditText
-        android:paddingLeft="10dp"
-        android:drawableLeft="@drawable/name"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/search"
         android:id="@+id/edt_checker_name"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_below="@+id/edt_checker_id"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/search"
         android:gravity="center"
-        android:textColorHint="@color/com_facebook_button_background_color_selected"
-        android:hint="Enter checker name" />
+        android:hint="Enter checker name"
+        android:paddingLeft="10dp"
+        android:textColorHint="@color/com_facebook_button_background_color_selected" />
 </RelativeLayout>

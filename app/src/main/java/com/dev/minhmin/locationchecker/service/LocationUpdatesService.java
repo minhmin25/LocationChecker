@@ -175,6 +175,7 @@ public class LocationUpdatesService extends Service implements GoogleApiClient.C
     private void updateData() {
         final Query mRef = ref.orderByKey();
         final String key = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        final String url = FirebaseAuth.getInstance().getCurrentUser().getPhotoUrl().toString();
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -187,6 +188,7 @@ public class LocationUpdatesService extends Service implements GoogleApiClient.C
                                 Map<String, Object> updateData = new HashMap<>();
                                 updateData.put("x", mLocation.getLatitude());
                                 updateData.put("y", mLocation.getLongitude());
+                                updateData.put("imageUrl", url);
                                 ref.child(parentKey).child(key).updateChildren(updateData);
                                 Log.e("ahihi", mLocation.getLatitude() + "/" + mLocation.getLongitude());
                             }
