@@ -57,6 +57,5 @@ public class ListCheckerAdapter extends BaseAdapter {
 
     private class Viewholder {
         TextView tvCheckerName;
-
     }
 }

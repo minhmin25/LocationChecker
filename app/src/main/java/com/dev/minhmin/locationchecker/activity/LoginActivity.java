@@ -30,6 +30,7 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 /**
@@ -60,6 +61,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 //kiem tra xem da dang nhap hay chua
                 if (firebaseAuth.getCurrentUser() != null) {
+                    FirebaseUser user =firebaseAuth.getCurrentUser();
+                    Log.e("ahihi", user.getDisplayName()+"/"+user.getEmail()+"/"+user.getPhotoUrl().toString()+"/"+user.getToken(true));
                     //neu da dang nhap chuyen sang activity Google Account
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     Toast.makeText(getApplication(), "Login success", Toast.LENGTH_SHORT).show();
