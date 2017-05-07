@@ -9,7 +9,7 @@
     tools:showIn="@layout/app_bar_main">
 
     <Button
-        android:background="@color/com_facebook_button_background_color"
+        android:background="@drawable/button"
         android:layout_marginLeft="120dp"
         android:id="@+id/btn_add"
         android:layout_width="150dp"
