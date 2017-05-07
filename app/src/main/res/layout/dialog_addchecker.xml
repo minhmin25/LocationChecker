@@ -10,25 +10,23 @@
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_alignParentTop="true"
-        android:drawableLeft="@drawable/id"
         android:layout_centerHorizontal="true"
         android:background="@drawable/search"
+        android:drawableLeft="@drawable/id"
         android:gravity="center"
         android:hint="Enter id checker"
-        android:paddingLeft="10dp"
         android:textColorHint="@color/com_facebook_button_background_color_selected" />
 
     <EditText
-        android:drawableLeft="@drawable/name"
         android:id="@+id/edt_checker_name"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_below="@+id/edt_checker_id"
-        android:layout_marginLeft="40dp"
         android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/search"
+        android:drawableLeft="@drawable/name"
         android:gravity="center"
         android:hint="Enter checker name"
-        android:paddingLeft="10dp"
         android:textColorHint="@color/com_facebook_button_background_color_selected" />
 </RelativeLayout>
