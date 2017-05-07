@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "348727736349-uomri3191rmrhe6nhm46r9f6jsopafhc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dev.minhmin.locationchecker",
+            "certificate_hash": "354074b31d2c46b83e7cc76ba6e6380c918ada61"
+          }
+        },
+        {
           "client_id": "348727736349-50mrd2lak90drr076rpue4kqqk9amv78.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
