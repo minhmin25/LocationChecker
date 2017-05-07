@@ -5,16 +5,19 @@
     android:orientation="vertical">
 
     <EditText
+         android:background="@drawable/search"
         android:id="@+id/edt_checker_id"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:gravity="center"
         android:hint="Enter id checker" />
 
     <EditText
+        android:layout_marginTop="5dp"
+        android:background="@drawable/search"
         android:id="@+id/edt_checker_name"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_below="@+id/edt_checker_id"
         android:gravity="center"
         android:hint="Enter checker name" />

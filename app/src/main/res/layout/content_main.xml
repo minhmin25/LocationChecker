@@ -9,11 +9,15 @@
     tools:showIn="@layout/app_bar_main">
 
     <Button
+        android:background="@color/com_facebook_button_background_color"
+        android:layout_marginLeft="120dp"
         android:id="@+id/btn_add"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
         android:layout_alignParentBottom="true"
         android:gravity="center"
+        android:textSize="16sp"
         android:text="Add" />
 
     <ListView
