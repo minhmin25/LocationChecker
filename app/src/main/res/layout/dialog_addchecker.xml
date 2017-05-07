@@ -5,10 +5,12 @@
     android:orientation="vertical">
 
     <EditText
+
         android:id="@+id/edt_checker_id"
         android:layout_width="300dp"
         android:layout_height="48dp"
         android:layout_alignParentTop="true"
+        android:drawableLeft="@drawable/id"
         android:layout_centerHorizontal="true"
         android:background="@drawable/search"
         android:gravity="center"
@@ -17,6 +19,7 @@
         android:textColorHint="@color/com_facebook_button_background_color_selected" />
 
     <EditText
+        android:drawableLeft="@drawable/name"
         android:id="@+id/edt_checker_name"
         android:layout_width="300dp"
         android:layout_height="48dp"
