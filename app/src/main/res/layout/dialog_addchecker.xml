@@ -24,7 +24,6 @@
         android:layout_height="48dp"
         android:layout_below="@+id/edt_checker_id"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="40dp"
         android:layout_marginTop="5dp"
         android:background="@drawable/search"
         android:drawableLeft="@drawable/name"

@@ -128,7 +128,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     listCheckers.clear();
                     for (DataSnapshot i : dataSnapshot.getChildren()) {
                         Checker c = i.getValue(Checker.class);
-//                        c.setId(i.getKey());
+                        c.setId(i.getKey());
                         listCheckers.add(c);
                     }
                     adapter.notifyDataSetChanged();

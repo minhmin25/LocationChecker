@@ -115,6 +115,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 mMap.clear();
                 for (DataSnapshot i : dataSnapshot.getChildren()) {
                     Checker c = i.getValue(Checker.class);
+                    c.setId(i.getKey());
                     Log.e("Location Tracker: ", c.getX() + ", " + c.getY());
                     LatLng point = new LatLng(c.getX(), c.getY());
                     mMap.addMarker(new MarkerOptions().position(point).title(c.getName()));
@@ -129,7 +130,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
                 origin = new LatLng(mChecker.getX(), mChecker.getY());
                 dest = new LatLng(focusChecker.getX(), focusChecker.getY());
-                mMap.moveCamera(CameraUpdateFactory.newLatLng(dest));
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(origin));
                 mMap.animateCamera(CameraUpdateFactory.zoomTo(15));
                 // Getting URL to the Google Directions API
                 String url = getUrl(origin, dest);
